@@ -9,5 +9,5 @@ Feature: Booking Flight in Agoda
     Then user filters AirAsia flight
     And user selects the cheapest flight
     Then verify selected price matches checkout price
-    And verify airline is "AirAsia"
+    And verify airline is "Indonesia AirAsia"
     Then user fills contact details
