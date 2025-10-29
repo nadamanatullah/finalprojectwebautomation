@@ -11,7 +11,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-import com.finalprojectwebautomotion.page_factory.base.BasePage;
+import com.finalprojectwebautomotion.base.BasePage;
 import com.finalprojectwebautomotion.page_factory.object_repository.HomeObjectRepository;
 
 public class HomePage extends BasePage {

@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-import com.finalprojectwebautomotion.page_factory.base.BasePage;
+import com.finalprojectwebautomotion.base.BasePage;
 import com.finalprojectwebautomotion.page_factory.object_repository.FlightObjectRepository;
 
 public class FlightPage extends BasePage {

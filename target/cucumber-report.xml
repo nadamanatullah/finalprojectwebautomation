@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="38.973" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-10-29T03:16:46.240675500Z">
+<testcase classname="Booking Flight in Agoda" name="User books a flight from Jakarta to Singapore" time="38.631">
+<system-out><![CDATA[
+Given user is on the Agoda Flights page.....................................passed
+When user selects departure city as "Jakarta"...............................passed
+And user selects destination city as "Singapore"............................passed
+And user selects tomorrow date..............................................passed
+And user clicks Search......................................................passed
+Then user filters AirAsia flight............................................passed
+And user selects the cheapest flight........................................passed
+Then verify selected price matches checkout price...........................passed
+And verify airline is "AirAsia".............................................passed
+Then user fills contact details.............................................passed
+]]></system-out>
+</testcase>
+</testsuite>

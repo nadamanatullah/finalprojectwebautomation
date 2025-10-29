@@ -1,0 +1,8 @@
+com\finalprojectwebautomotion\Main.class
+com\finalprojectwebautomotion\page_factory\object_repository\FlightObjectRepository.class
+com\finalprojectwebautomotion\page_factory\pages\CustomerInformationPage.class
+com\finalprojectwebautomotion\page_factory\pages\FlightPage.class
+com\finalprojectwebautomotion\base\BasePage.class
+com\finalprojectwebautomotion\page_factory\pages\HomePage.class
+com\finalprojectwebautomotion\page_factory\object_repository\CustumerInformationObjectRepository.class
+com\finalprojectwebautomotion\page_factory\object_repository\HomeObjectRepository.class
