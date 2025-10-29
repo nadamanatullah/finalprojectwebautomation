@@ -1,5 +1,7 @@
 # Web Automation — Agoda Flight Booking - NADA AMANATULLAH
 
+VIDEO CI CD JENKINS GIT https://drive.google.com/file/d/1AI6Bsx8eO-X_ZjwPKf44SK6wUx2nBgbO/view?usp=drive_link
+
 Project ini adalah contoh implementasi **Web Automation Framework** berbasis:
 - **Selenium WebDriver**
 - **Cucumber (BDD)**
