@@ -12,6 +12,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import static com.finalprojectwebautomotion.utils.Utility.*;
 
 public class BookingStep {
     WebDriver driver;
@@ -32,11 +33,23 @@ public class BookingStep {
 
         homePage.openFlightsPage();
     }
+    
+    /*
+     * Step definition untuk memilih kota keberangkatan dan tujuan bisa dioptimasi lagi dengan parameter ya
+     * karena sudah ada params di feature file bisa dipakai "city" tp kenapa homePage.selectDepartureCity();
+     * tidak pakai parameter city nya, jadi bisa dipakai untuk data lain juga
+     */
     @When("user selects departure city as {string}")
     public void user_selects_departure_city(String city) throws InterruptedException {
         homePage.selectDepartureCity();
     }
 
+
+    /*
+     * Step definition untuk memilih kota tujuan bisa dioptimasi lagi dengan parameter ya
+     * karena sudah ada params di feature file bisa dipakai "city" tp kenapa homePage.selectDepartureCity();
+     * tidak pakai parameter city nya, jadi bisa dipakai untuk data lain juga
+     */
     @And("user selects destination city as {string}")
     public void user_selects_destination_city(String city) throws InterruptedException {
         homePage.selectDestinationCity();
@@ -52,6 +65,15 @@ public class BookingStep {
         homePage.clickSearch();
     }
 
+    /*
+     * Untuk step defenition filter AirAsia flight bisa dioptimasi lagi dengan parameter ya
+     * supaya bisa dipakai untuk airline lain juga ya karena sekarang masih hardcode AirAsia
+     * contoh implementasinya 
+     * @Then("user filters {string} flight")
+     * public void user_filters_flight(String airline) throws InterruptedException {
+     *     flightPage.filterByAirline(airline);
+     * }
+     */
     @Then("user filters AirAsia flight")
     public void user_filters_airasia_flight() throws InterruptedException {
         flightPage.filterAirAsia();
@@ -69,6 +91,8 @@ public class BookingStep {
         String cleanSelected = selectedPrice.replaceAll("[^0-9]", "");
         String cleanCheckout = checkoutPrice.replaceAll("[^0-9]", "");
 
+        assertEquals(cleanCheckout, cleanSelected, 
+            "Harga di halaman checkout tidak sama dengan harga yang dipilih!");
         Assert.assertEquals(cleanCheckout, cleanSelected, 
             "Harga di halaman checkout tidak sama dengan harga yang dipilih!");
         System.out.println("Harga sesuai antara hasil dan checkout.");
@@ -76,8 +100,14 @@ public class BookingStep {
 
     @And("verify airline is {string}")
     public void verify_airline_is(String expectedAirline) {
-        String actualAirline = customerPage.getAirlineName();
+        String actualAirline = customerPage.getAirlineName(expectedAirline);
         System.out.println("Maskapai sesuai: " + actualAirline);
+
+        /*
+         * Untuk assertion bisa memakai utility class yang sudah dibuat ya
+         *
+         */
+        assertEquals(actualAirline, expectedAirline, "Airline Name");
         Assert.assertEquals(actualAirline, expectedAirline);
         System.out.println("Maskapai sesuai: " + actualAirline);
     }
